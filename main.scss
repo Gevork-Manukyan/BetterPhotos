@@ -1,3 +1,10 @@
+// VARIABLES
+$color-grey-light: #EEF3F4;
+$color-grey-medium: #A9B4B7;
+$color-grey-dark: #555A5B;
+
+$ts: all 0.2s;
+
 /* RESET */
 *,
 *::before,
@@ -38,12 +45,13 @@ a {
         url(https://bytegrad.com/course-assets/css/2/pattern.svg),
         linear-gradient(to bottom right, #8FD861, #2CC695 90%);
 
-    scrollbar-width: none; /* ONLY FOR FIREFOX/EDGE */
-}
+    /* ONLY FOR FIREFOX/EDGE */
+    scrollbar-width: none; 
 
-/*ONLY FOR CHROME*/
-.page::-webkit-scrollbar {
-    display: none;
+    /*ONLY FOR CHROME*/
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 .app {
@@ -73,77 +81,77 @@ a {
 
 .search {
     position: relative;
-}
 
-.search__input {
-    background-color: #EEF3F4;
-    height: 34px;
-    width: 405px;
-    border-radius: 500px;
-    font-size: 13px;
-    color: #555A5B;
-    padding-left: 20px;
-    outline: none;
-    transition: all 0.2s;
-}
+    &__input {
+        background-color: $color-grey-light;
+        height: 34px;
+        width: 405px;
+        border-radius: 500px;
+        font-size: 13px;
+        color: $color-grey-dark;
+        padding-left: 20px;
+        outline: none;
+        transition: $ts;
 
-.search__input:focus {
-    width: 425px;
-}
+        &:focus {
+            width: 425px;
+        }
+        
+        &::placeholder,
+        &::-moz-placeholder,
+        &::-webkit-input-placeholder {
+            color: $color-grey-medium;
+        }
+    }
+    
+    &__submit {
+        font-size: 15px;
+        color: $color-grey-medium;
+        cursor: pointer;
+        transition: $ts;
+        position: absolute;
+        right: 13px;
+        top: 8px;
 
-.search__input::placeholder,
-.search__input::-moz-placeholder,
-.search__input::-webkit-input-placeholder {
-    color: #A9B4B7;
-}
-
-.search__submit {
-    font-size: 15px;
-    color: #A9B4B7;
-    cursor: pointer;
-    transition: all 0.2s;
-    position: absolute;
-    right: 13px;
-    top: 8px;
-}
-
-.search__submit:focus {
-    color: #555A5B;
-}
-
-.search__icon {
-
+        &:focus {
+            color: $color-grey-dark;
+        }
+    }
+    
+    &__icon {
+    
+    }
 }
 
 .nav {
     margin-left: auto;
-}
 
-.nav__list {
-    display: flex;
-    align-items: stretch;
-}
+    &__list {
+        display: flex;
+        align-items: stretch;
+    }
+    
+    &__item {
+    
+    }
+    
+    &__link {
+        padding: 0 20px;
+        transition: $ts;
+        height: 65px;
+        display: block;
 
-.nav__item {
-
-}
-
-.nav__link {
-    padding: 0 20px;
-    transition: all 0.2s;
-    height: 65px;
-    display: block;
-}
-
-.nav__link:hover,
-.nav__link:focus {
-    background-color: #EEF3F4;
-}
-
-.nav__icon {
-    color: #A9B4B7;
-    font-size: 22px;
-    line-height: 65px;
+        &:hover,
+        &:focus {
+            background-color: $color-grey-light;
+        }
+    }
+    
+    &__icon {
+        color: $color-grey-medium;
+        font-size: 22px;
+        line-height: 65px;
+    }
 }
 
 .sidebar {
@@ -152,7 +160,7 @@ a {
 }
 
 .gallery {
-    background-color: #EEF3F4;
+    background-color: $color-grey-light;
 }
 
 .steps {
